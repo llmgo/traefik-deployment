@@ -1,0 +1,14 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: traefik-ingressroutes
+  namespace: kube-system
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`traefik.yoho8.com`) && PathPrefix(`/`)
+    kind: Rule
+    services:
+    - name: traefik
+      port: 8080
