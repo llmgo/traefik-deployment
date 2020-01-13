@@ -7,7 +7,7 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: Host(`traefik.yoho8.com`) && PathPrefix(`/`)
+  - match: Host(`traefik.example.com`) && PathPrefix(`/`)
     kind: Rule
     services:
     - name: traefik
